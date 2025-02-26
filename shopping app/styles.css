@@ -1,0 +1,396 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Listen-Container */
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Artikel-Liste */
+#item-detail-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Einzelner Artikel */
+.article-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Artikel-Icon */
+.article-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Artikelname */
+.article-text {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+/* Durchgestrichene Artikel */
+.strikethrough {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Drei-Punkte-Menü */
+.article-menu {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fab:hover {
+    background: #0056b3;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+section {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#overview-view {
+    width: 40%;  /* Listenübersicht bleibt links */
+}
+
+#detail-view {
+    width: 55%;  /* Detailansicht erscheint rechts */
+    display: none;  /* Standardmäßig versteckt */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+#list-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#list-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-button {
+    background-color: #ffffff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.list-button:hover {
+    background-color: lightgrey;
+}
+
+/* Stellt sicher, dass das Icon immer am Anfang ist */
+.item-container {
+    display: flex;
+    align-items: center;
+}
+
+.item-container .item-icon {
+    margin-right: 8px; /* Abstand zwischen Icon und Text */
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100;
+}
+
+.menu-button {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 5px;
+    min-width: 120px;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: #f0f0f0;
+}
+
+/* Häkchen für abgeschlossene Listen */
+.list-completed::after {
+    content: "✔";
+    color: green;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+/* Bootstrap Card Styling für Artikel hinzufügen */
+.add-item-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Floating Plus Button */
+.add-item-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-listener-btn {
+    display: block;
+    width: 100%; /* Volle Breite für bessere Platzierung */
+    max-width: 200px; /* Optional: Maximale Breite für bessere Optik */
+    margin: 10px auto; /* Zentriert den Button unter der Listenübersicht */
+    padding: 10px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-listener-btn:hover {
+    background-color: #0056b3;
+}
+
+.add-item-btn:hover {
+    background: #0056b3;
+}
+
+/* Bild-Upload Styling */
+.add-item-card input[type="file"] {
+    margin-top: 10px;
+}
+
+.predefined-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.predefined-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.predefined-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.predefined-name {
+    flex-grow: 1;
+}
+
+.predefined-quantity {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.add-predefined-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-predefined-btn:hover {
+    background-color: #218838;
+}
+
+.title-container {
+    text-align: center;
+    padding: 50px;
+}
+
+#overview-view, #detail-view, #article-management {
+    display: none; /* Anfangs ausblenden */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Titelseite zentrieren */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Einkaufswagen-Icon animiert (fährt von links nach rechts) */
+.title-icon {
+    font-size: 80px;
+    display: inline-block;
+    margin-bottom: 20px;
+    animation: moveLeftRight 2s infinite alternate ease-in-out;
+}
+
+/* Button Styling */
+#start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#start-button:hover {
+    transform: scale(1.1);
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Einkaufswagen fährt hin und her */
+@keyframes moveLeftRight {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(20px);
+    }
+}
+
+.list-menu {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+/* Stellt sicher, dass die Hauptüberschrift als normale Überschrift wirkt */
+.main-header {
+    text-align: left;
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px; /* Abstand nach unten, damit die Listen nicht direkt anschließen */
+}
+
