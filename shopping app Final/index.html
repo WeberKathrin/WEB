@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufsliste</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header mit Einkaufswagen und Benutzerinfo -->
+<header class="app-header">
+    <div class="header-left">
+        <i class="bi bi-cart-fill moving-cart"></i>
+        <span class="app-title">Einkaufsliste</span>
+    </div>
+    <div class="user-info">
+        <i class="bi bi-person-circle user-icon"></i>
+        <span id="username">Angemeldet als Gast</span>
+    </div>
+    <!-- Bootstrap Icons einbinden -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</header>
+
+
+
+<!-- Titelseite mit Animation -->
+<div id="title-page" class="title-container">
+    <h1>Willkommen zur Einkaufsliste</h1>
+    <p>Organisiere deine Einkäufe einfach und effizient.</p>
+    <span class="title-icon">🛒</span>
+    <button id="start-button" class="btn btn-primary">Los geht's!</button>
+</div>
+
+<div class="container">
+
+    <!-- Listenübersicht -->
+    <section id="overview-view">
+        <h2>Listenübersicht</h2>
+        <ul id="list-container"></ul>
+    </section>
+
+    <!-- Detailansicht einer Liste -->
+    <section id="detail-view" style="display: none;">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 id="list-name">Wähle eine Liste</h2>
+            <button id="open-add-item-modal" class="btn btn-outline-primary">+</button>
+        </div>
+        <ul id="item-detail-list"></ul>
+    </section>
+
+    <!-- Tag-Verwaltung für Filterung und Hinzufügen -->
+    <section id="tag-management">
+        <h2>Tags verwalten</h2>
+        <input type="text" id="new-tag-input" class="form-control mb-2" placeholder="Neuen Tag eingeben">
+        <button id="add-tag-button" class="btn btn-primary">Tag hinzufügen</button>
+        <label for="tag-filter">Nach Tag filtern:</label>
+        <select id="tag-filter">
+            <option value="">Alle</option>
+        </select>
+    </section>
+</div>
+
+<!-- Modal für Artikel hinzufügen -->
+<div id="add-item-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Neuen Artikel hinzufügen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Vordefinierte Artikel für schnellen Zugriff -->
+                <div id="predefined-items" class="predefined-items-container">
+                    <div class="predefined-item">
+                        <span class="predefined-icon">🥛</span>
+                        <span class="predefined-name">Milch</span>
+                        <input type="number" class="predefined-quantity" min="1" placeholder="Menge">
+                        <button class="add-predefined-btn">+</button>
+                    </div>
+                    <div class="predefined-item">
+                        <span class="predefined-icon">🍞</span>
+                        <span class="predefined-name">Brot</span>
+                        <input type="number" class="predefined-quantity" min="1" placeholder="Menge">
+                        <button class="add-predefined-btn">+</button>
+                    </div>
+                    <div class="predefined-item">
+                        <span class="predefined-icon">🍎</span>
+                        <span class="predefined-name">Äpfel</span>
+                        <input type="number" class="predefined-quantity" min="1" placeholder="Menge">
+                        <button class="add-predefined-btn">+</button>
+                    </div>
+                    <div class="predefined-item">
+                        <span class="predefined-icon">🥚</span>
+                        <span class="predefined-name">Eier</span>
+                        <input type="number" class="predefined-quantity" min="1" placeholder="Menge">
+                        <button class="add-predefined-btn">+</button>
+                    </div>
+                    <div class="predefined-item">
+                        <span class="predefined-icon">🧀</span>
+                        <span class="predefined-name">Käse</span>
+                        <input type="number" class="predefined-quantity" min="1" placeholder="Menge">
+                        <button class="add-predefined-btn">+</button>
+                    </div>
+                </div>
+
+                <!-- Formular für eigene Artikel -->
+                <form id="add-item-form">
+                    <input type="text" id="item-name" class="form-control mb-2" placeholder="Artikel" required>
+                    <input type="text" id="item-quantity" class="form-control mb-2" placeholder="Menge" required>
+                    <label for="item-icon">Wähle ein Icon:</label>
+                    <select id="item-icon" class="form-control mb-2">
+                        <option value="🥛">🥛</option>
+                        <option value="🍞">🍞</option>
+                        <option value="🍎">🍎</option>
+                        <option value="🥚">🥚</option>
+                        <option value="🧀">🧀</option>
+                    </select>
+                    <label for="item-image">Bild hochladen:</label>
+                    <input type="file" id="item-image" class="form-control mb-2">
+                    <button type="submit" class="btn btn-primary w-100">Hinzufügen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap und Haupt-JS-Datei -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script defer type="module" src="main.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modalElement = document.getElementById("add-item-modal");
+        if (!modalElement) {
+            console.error("Fehler: Modal-Element nicht gefunden!");
+            return;
+        }
+
+        if (typeof bootstrap === "undefined") {
+            console.error("Fehler: Bootstrap wurde nicht geladen!");
+            return;
+        }
+
+        const modal = new bootstrap.Modal(modalElement);
+        const openModalBtn = document.getElementById("open-add-item-modal");
+
+        if (!openModalBtn) {
+            console.error("Fehler: Button zum Öffnen des Modals nicht gefunden!");
+            return;
+        }
+
+        openModalBtn.addEventListener("click", () => modal.show());
+    });
+</script>
+</body>
+</html>
