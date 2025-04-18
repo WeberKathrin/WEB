@@ -1,0 +1,76 @@
+//{
+//  "items": [
+//    {
+//      "id": 201,
+//      "name": "Milch",
+//      "quantity": "1 Liter",
+//      "archived": false,
+//      "listId": 1,
+//      "tags": ["Getränke", "Milchprodukte"],
+//      "icon": "🥛"
+//    },
+//    {
+//      "id": 202,
+//      "name": "Brot",
+//      "quantity": "2 Stück",
+//      "archived": false,
+//      "listId": 1,
+//      "tags": ["Backwaren"],
+//      "icon": "🍞"
+//    },
+//    {
+//      "id": 203,
+//      "name": "Apfel",
+//      "quantity": "5 Stück",
+//      "archived": true,
+//      "listId": 1,
+//      "tags": ["Obst"],
+//      "icon": "🍎"
+//    },
+//    {
+//      "id": 204,
+//      "name": "Waschmittel",
+//      "quantity": "1 Packung",
+//      "archived": false,
+//      "listId": 2,
+//      "tags": ["Reinigung"],
+//      "icon": "🧼"
+//    },
+//    {
+//      "id": 205,
+//      "name": "Spülmittel",
+//      "quantity": "1 Flasche",
+//      "archived": false,
+//      "listId": 2,
+//      "tags": ["Reinigung"],
+//      "icon": "🧴"
+//    },
+//    {
+//      "id": 206,
+//      "name": "Eier",
+//      "quantity": "10 Stück",
+//      "archived": false,
+//      "listId": 1,
+//      "tags": ["Milchprodukte", "Protein"],
+//      "icon": "🥚"
+//    },
+//    {
+//      "id": 207,
+//      "name": "Käse",
+//      "quantity": "200g",
+//      "archived": false,
+//      "listId": 1,
+//      "tags": ["Milchprodukte"],
+//      "icon": "🧀"
+//    },
+//    {
+//      "id": 208,
+//      "name": "Zitronen",
+//      "quantity": "3 Stück",
+//      "archived": false,
+//      "listId": 1,
+//      "tags": ["Obst", "Vitamin C"],
+//      "icon": "🍋"
+//    }
+//  ]
+//}
